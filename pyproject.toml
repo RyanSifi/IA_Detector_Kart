@@ -1,0 +1,13 @@
+[project]
+name = "kart-detection"
+version = "0.1.0"
+description = "Kart detection using YOLOv8"
+authors = [
+    {name = "Gemini", email = "no-reply@google.com"},
+]
+dependencies = [
+    "ultralytics",
+    "opencv-python",
+    "roboflow",
+    "ipython"
+]

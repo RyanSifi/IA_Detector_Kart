@@ -1,0 +1,6 @@
+train: dataset_kart/images/train
+val: dataset_kart/images/val
+test: dataset_kart/images/test
+
+nc: 1
+names: ['go_kart']
