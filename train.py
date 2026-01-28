@@ -4,4 +4,4 @@ from ultralytics import YOLO
 model = YOLO('yolov8n.pt')
 
 # Train the model
-model.train(data='karting_data.yaml', epochs=10, imgsz=640)
+model.train(data='karting_data.yaml', epochs=50, imgsz=640, augment=True)

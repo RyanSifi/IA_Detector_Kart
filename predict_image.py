@@ -4,13 +4,6 @@ from ultralytics import YOLO
 from pathlib import Path
 
 def predict(model_path, image_path):
-    """
-    Runs YOLOv8 prediction on a single image.
-
-    Args:
-        model_path (str): Path to the trained YOLOv8 model weights (.pt file).
-        image_path (str): Path to the input image.
-    """
     output_dir = "output_predictions"
     os.makedirs(output_dir, exist_ok=True)
 
