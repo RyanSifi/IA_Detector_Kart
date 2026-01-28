@@ -1,0 +1,6 @@
+pyproject.toml
+kart_detection.egg-info/PKG-INFO
+kart_detection.egg-info/SOURCES.txt
+kart_detection.egg-info/dependency_links.txt
+kart_detection.egg-info/requires.txt
+kart_detection.egg-info/top_level.txt

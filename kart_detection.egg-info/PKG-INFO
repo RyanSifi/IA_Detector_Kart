@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: kart-detection
+Version: 0.1.0
+Summary: Kart detection using YOLOv8
+Author-email: Gemini <no-reply@google.com>
+Requires-Dist: ultralytics
+Requires-Dist: opencv-python
+Requires-Dist: roboflow
+Requires-Dist: ipython
