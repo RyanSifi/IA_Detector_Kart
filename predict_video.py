@@ -12,14 +12,11 @@ def process_video(model_path, video_path, output_dir):
         video_path (str): Path to the input video.
         output_dir (str): Directory to save the frames with detections.
     """
-    # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     print(f"Output frames will be saved in: {os.path.abspath(output_dir)}")
 
-    # Load the trained model
     model = YOLO(model_path)
     
-    # Open the video file
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         print(f"Error: Could not open video file {video_path}")
@@ -37,22 +34,17 @@ def process_video(model_path, video_path, output_dir):
             break
 
         frame_count += 1
-        if frame_count > 300:
-            print("\nStopping analysis at 300 frames as planned.")
+        if frame_count > 15582:
+            print("\nStopping analysis at 1000 frames as planned.")
             break
         
-        # To make processing faster, you could process every Nth frame
-        # if frame_count % 5 != 0:
-        #     continue
 
         print(f"Processing frame {frame_count}/{total_frames}...")
 
-        # Run prediction on the frame
-        # Setting verbose=False to avoid flooding the console
+        
         results = model.predict(source=frame, verbose=False)
         
-        # The 'go_kart' class has index 0, as defined in karting_data.yaml
-        # We check if any of the detected boxes belong to class 0
+       
         if results and len(results[0].boxes) > 0 and any(box.cls == 0 for box in results[0].boxes):
             saved_frame_count += 1
             output_path = os.path.join(output_dir, f"frame_{frame_count:05d}.jpg")
